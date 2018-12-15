@@ -28,25 +28,34 @@ public class CircleApp {
         int count = 0;
 
         do{
-            System.out.println("Please enter the radius of the circle");
-            double radius = keyboard.nextDouble();
+            try {
+                System.out.println("Please enter the radius of the circle");
+                double radius = keyboard.nextDouble();
 
-            Circle circle = new Circle(radius);
-            circle.setArea(circle.getArea());
-            circle.setCircumference(circle.getCircumference());
+                Circle circle = new Circle(radius);
+                circle.setArea(circle.getArea());
+                circle.setCircumference(circle.getCircumference());
 
-            System.out.println("Circumference is " + circle.getFormattedCircumference());
-            System.out.println("Area is " + circle.getFormattedArea());
-            System.out.println();
-            keyboard.nextLine();
+                System.out.println("Circumference is " + circle.getFormattedCircumference());
+                System.out.println("Area is " + circle.getFormattedArea());
+                System.out.println();
+                keyboard.nextLine();
 
+                count++;
+                Circle.setObjectCount(count);
+
+            }catch(Exception e){
+                System.out.println("Error!");
+                keyboard.reset();
+                keyboard.nextLine();
+            }
             // Check if the user wants to continue
             System.out.println("Do you want to continue, y/n: ");
             input = keyboard.nextLine();
             repeat = input.charAt(0);
             System.out.println();
-            count++;
-            Circle.setObjectCount(count);
+
+
 
         }while (repeat == 'y' || repeat == 'Y');
 
