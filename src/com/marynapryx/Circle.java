@@ -24,6 +24,18 @@ public class Circle {
         this.objectCount = objectCount;
     }
 
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public void setCircumference(double circumference) {
+        this.circumference = circumference;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
+    }
+
     /**
      * Gets circumference
      * @return circumference
@@ -77,4 +89,7 @@ public class Circle {
         return objectCount;
     }
 
+    public static void setObjectCount(int objectCount) {
+        Circle.objectCount = objectCount;
+    }
 }
